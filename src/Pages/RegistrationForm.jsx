@@ -23,7 +23,7 @@ const Register = () => {
   useEffect(() => {
     const fetchPlans = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/epins/plans");
+        const response = await axios.get("/api/epins/plans");
         setPlans(response.data);
       } catch (error) {
         console.error("Error fetching plans:", error);
@@ -58,7 +58,7 @@ const Register = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", formData);
+      const res = await axios.post("/api/auth/register", formData);
       setRegisteredUser(formData.name);
       setRegisteredUserId(res.data.user_id); 
       setModalOpen(true);
